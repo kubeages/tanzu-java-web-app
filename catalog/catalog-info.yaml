@@ -15,3 +15,4 @@ spec:
   type: service
   lifecycle: experimental
   owner: epic-dev-team
+  system: tanzu-java-web
