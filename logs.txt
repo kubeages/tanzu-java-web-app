@@ -1,0 +1,248 @@
+[0;36m===> PREPARE
+[0mBuild reason(s): CONFIG
+CONFIG:
+	[32m+[0m [32menv:[0m
+	[32m+[0m [32m- name: BP_OCI_SOURCE[0m
+	[32m+[0m [32m  value: main/46d648eb9ea5306a04563287658d3a0aadf583d4[0m
+	resources: {}
+	[31m-[0m [31msource: {}[0m
+	[32m+[0m [32msource:[0m
+	[32m+[0m [32m  blob:[0m
+	[32m+[0m [32m    url: http://fluxcd-source-controller.flux-system.svc.cluster.local./gitrepository/apps/tanzu-java-web-app/46d648eb9ea5306a04563287658d3a0aadf583d4.tar.gz[0m
+Loading secret for "registry.cloud-garage.net" from secret "registry-credentials" at location "/var/build-secrets/registry-credentials"
+Loading cluster credential helpers
+Downloading fluxcd-source-controller.flux-system.svc.cluster.local./gitrepository/apps/tanzu-java-web-app/46d648eb9ea5306a04563287658d3a0aadf583d4.tar.gz...
+Successfully downloaded fluxcd-source-controller.flux-system.svc.cluster.local./gitrepository/apps/tanzu-java-web-app/46d648eb9ea5306a04563287658d3a0aadf583d4.tar.gz in path "/workspace"
+[0;36m===> ANALYZE
+[0mPrevious image with name "registry.cloud-garage.net/ages/tanzu-java-web-app-apps" not found
+[0;36m===> DETECT
+[0m12 of 43 buildpacks participating
+tanzu-buildpacks/deprecation-warnings 0.0.2
+paketo-buildpacks/ca-certificates     3.4.0
+paketo-buildpacks/bellsoft-liberica   9.8.0
+paketo-buildpacks/syft                1.10.1
+paketo-buildpacks/maven               6.8.0
+paketo-buildpacks/executable-jar      6.5.0
+paketo-buildpacks/apache-tomcat       7.6.0
+paketo-buildpacks/apache-tomee        1.3.0
+paketo-buildpacks/liberty             2.2.0
+paketo-buildpacks/dist-zip            5.4.0
+paketo-buildpacks/spring-boot         5.19.0
+paketo-buildpacks/image-labels        4.3.0
+[0;36m===> RESTORE
+[0m[0;36m===> BUILD
+[0mTanzu Deprecation Warnings Buildpack 0.0.2
+  WARNINGS:
+    * Stack "io.buildpacks.stacks.bionic" is deprecated, consider upgrading to "io.buildpacks.stacks.jammy"
+
+[34m[0m
+[34m[1mPaketo Buildpack for CA Certificates[0m[34m 3.4.0[0m
+  [34;2;3mhttps://github.com/paketo-buildpacks/ca-certificates[0m
+  [34mLaunch Helper[0m: [33mContributing[0m to layer
+[2m    Creating /layers/paketo-buildpacks_ca-certificates/helper/exec.d/ca-certificates-helper[0m
+[34m[0m
+[34m[1mPaketo Buildpack for BellSoft Liberica[0m[34m 9.8.0[0m
+  [34;2;3mhttps://github.com/paketo-buildpacks/bellsoft-liberica[0m
+  [2mBuild Configuration:[0m
+[2m    $BP_JVM_JLINK_ARGS           --no-man-pages --no-header-files --strip-debug --compress=1  configure custom link arguments (--output must be omitted)[0m
+[2m    $BP_JVM_JLINK_ENABLED        false                                                        enables running jlink tool to generate custom JRE[0m
+[2m    $BP_JVM_TYPE                 JRE                                                          the JVM type - JDK or JRE[0m
+[2m    $BP_JVM_VERSION              11                                                           the Java version[0m
+  [2mLaunch Configuration:[0m
+[2m    $BPL_DEBUG_ENABLED           false                                                        enables Java remote debugging support[0m
+[2m    $BPL_DEBUG_PORT              8000                                                         configure the remote debugging port[0m
+[2m    $BPL_DEBUG_SUSPEND           false                                                        configure whether to suspend execution until a debugger has attached[0m
+[2m    $BPL_HEAP_DUMP_PATH                                                                       write heap dumps on error to this path[0m
+[2m    $BPL_JAVA_NMT_ENABLED        true                                                         enables Java Native Memory Tracking (NMT)[0m
+[2m    $BPL_JAVA_NMT_LEVEL          summary                                                      configure level of NMT, summary or detail[0m
+[2m    $BPL_JFR_ARGS                                                                             configure custom Java Flight Recording (JFR) arguments[0m
+[2m    $BPL_JFR_ENABLED             false                                                        enables Java Flight Recording (JFR)[0m
+[2m    $BPL_JMX_ENABLED             false                                                        enables Java Management Extensions (JMX)[0m
+[2m    $BPL_JMX_PORT                5000                                                         configure the JMX port[0m
+[2m    $BPL_JVM_HEAD_ROOM           0                                                            the headroom in memory calculation[0m
+[2m    $BPL_JVM_LOADED_CLASS_COUNT  35% of classes                                               the number of loaded classes in memory calculation[0m
+[2m    $BPL_JVM_THREAD_COUNT        250                                                          the number of threads in memory calculation[0m
+[2m    $JAVA_TOOL_OPTIONS                                                                        the JVM launch flags[0m
+[2m    [2mUsing buildpack default Java version 11[0m[2m[0m
+  [34mBellSoft Liberica JDK 11.0.16[0m: [33mContributing[0m to layer
+[2m    [32mReusing[0m[2m cached download from buildpack[0m
+[2m    Expanding to /layers/paketo-buildpacks_bellsoft-liberica/jdk[0m
+[2m    Adding 127 container CA certificates to JVM truststore[0m
+[2m    Writing env.build/JAVA_HOME.override[0m
+[2m    Writing env.build/JDK_HOME.override[0m
+  [34mBellSoft Liberica JRE 11.0.16[0m: [33mContributing[0m to layer
+[2m    [32mReusing[0m[2m cached download from buildpack[0m
+[2m    Expanding to /layers/paketo-buildpacks_bellsoft-liberica/jre[0m
+[2m    Adding 127 container CA certificates to JVM truststore[0m
+[2m    Writing env.launch/BPI_APPLICATION_PATH.default[0m
+[2m    Writing env.launch/BPI_JVM_CACERTS.default[0m
+[2m    Writing env.launch/BPI_JVM_CLASS_COUNT.default[0m
+[2m    Writing env.launch/BPI_JVM_SECURITY_PROVIDERS.default[0m
+[2m    Writing env.launch/JAVA_HOME.default[0m
+[2m    Writing env.launch/JAVA_TOOL_OPTIONS.append[0m
+[2m    Writing env.launch/JAVA_TOOL_OPTIONS.delim[0m
+[2m    Writing env.launch/MALLOC_ARENA_MAX.default[0m
+  [34mLaunch Helper[0m: [33mContributing[0m to layer
+[2m    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/active-processor-count[0m
+[2m    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/java-opts[0m
+[2m    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/jvm-heap[0m
+[2m    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/link-local-dns[0m
+[2m    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/memory-calculator[0m
+[2m    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/security-providers-configurer[0m
+[2m    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/jmx[0m
+[2m    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/jfr[0m
+[2m    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/security-providers-classpath-9[0m
+[2m    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/debug-9[0m
+[2m    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/nmt[0m
+[2m    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/openssl-certificate-loader[0m
+  [34mJava Security Properties[0m: [33mContributing[0m to layer
+[2m    Writing env.launch/JAVA_SECURITY_PROPERTIES.default[0m
+[2m    Writing env.launch/JAVA_TOOL_OPTIONS.append[0m
+[2m    Writing env.launch/JAVA_TOOL_OPTIONS.delim[0m
+[34m[0m
+[34m[1mPaketo Syft Buildpack[0m[34m 1.10.1[0m
+  [34;2;3mhttps://github.com/paketo-buildpacks/syft[0m
+[2m    [32mReusing[0m[2m cached download from buildpack[0m
+[2m    Writing env.build/SYFT_CHECK_FOR_APP_UPDATE.default[0m
+[34m[0m
+[34m[1mPaketo Buildpack for Maven[0m[34m 6.8.0[0m
+  [34;2;3mhttps://github.com/paketo-buildpacks/maven[0m
+  [2mBuild Configuration:[0m
+[2m    $BP_MAVEN_BUILD_ARGUMENTS  -Dmaven.test.skip=true --no-transfer-progress package  the arguments to pass to Maven[0m
+[2m    $BP_MAVEN_BUILT_ARTIFACT   target/*.[ejw]ar                                       the built application artifact explicitly.  Supersedes $BP_MAVEN_BUILT_MODULE[0m
+[2m    $BP_MAVEN_BUILT_MODULE                                                            the module to find application artifact in[0m
+[2m    $BP_MAVEN_DAEMON_ENABLED   false                                                  use maven daemon[0m
+[2m    $BP_MAVEN_POM_FILE         pom.xml                                                the location of the main pom.xml file, relative to the application root[0m
+[2m    $BP_MAVEN_SETTINGS_PATH                                                           the path to a Maven settings file[0m
+[2m    Creating cache directory /home/cnb/.m2[0m
+  [34mCompiled Application[0m: [33mContributing[0m to layer
+[2m    Executing mvnw --batch-mode -Dmaven.test.skip=true --no-transfer-progress package[0m
+      [INFO] Scanning for projects...
+      [INFO] 
+      [INFO] --------------------------< com.example:demo >--------------------------
+      [INFO] Building demo 0.0.1-SNAPSHOT
+      [INFO] --------------------------------[ jar ]---------------------------------
+      [INFO] 
+      [INFO] --- spring-boot-maven-plugin:2.7.4:build-info (default) @ demo ---
+      [INFO] 
+      [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ demo ---
+      [INFO] Using 'UTF-8' encoding to copy filtered resources.
+      [INFO] Using 'UTF-8' encoding to copy filtered properties files.
+      [INFO] Copying 1 resource
+      [INFO] Copying 0 resource
+      [INFO] 
+      [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ demo ---
+      [INFO] Changes detected - recompiling the module!
+      [INFO] Compiling 2 source files to /workspace/target/classes
+      [INFO] 
+      [INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ demo ---
+      [INFO] Not copying test resources
+      [INFO] 
+      [INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ demo ---
+      [INFO] Not compiling test sources
+      [INFO] 
+      [INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ demo ---
+      [INFO] Tests are skipped.
+      [INFO] 
+      [INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ demo ---
+      [INFO] Building jar: /workspace/target/demo-0.0.1-SNAPSHOT.jar
+      [INFO] 
+      [INFO] --- spring-boot-maven-plugin:2.7.4:repackage (repackage) @ demo ---
+      [INFO] Replacing main artifact with repackaged archive
+      [INFO] ------------------------------------------------------------------------
+      [INFO] BUILD SUCCESS
+      [INFO] ------------------------------------------------------------------------
+      [INFO] Total time:  8.246 s
+      [INFO] Finished at: 2022-11-15T11:27:02Z
+      [INFO] ------------------------------------------------------------------------
+
+  Removing source code
+  Restoring application artifact
+[34m[0m
+[34m[1mPaketo Buildpack for Executable JAR[0m[34m 6.5.0[0m
+  [34;2;3mhttps://github.com/paketo-buildpacks/executable-jar[0m
+  [34mClass Path[0m: [33mContributing[0m to layer
+[2m    Writing env/CLASSPATH.delim[0m
+[2m    Writing env/CLASSPATH.prepend[0m
+  Process types:
+    [36mexecutable-jar[0m: java org.springframework.boot.loader.JarLauncher (direct)
+    [36mtask[0m:           java org.springframework.boot.loader.JarLauncher (direct)
+    [36mweb[0m:            java org.springframework.boot.loader.JarLauncher (direct)
+[34m[0m
+[34m[1mPaketo Buildpack for Spring Boot[0m[34m 5.19.0[0m
+  [34;2;3mhttps://github.com/paketo-buildpacks/spring-boot[0m
+  [2mBuild Configuration:[0m
+[2m    $BP_SPRING_CLOUD_BINDINGS_DISABLED   false  whether to contribute Spring Boot cloud bindings support[0m
+  [2mLaunch Configuration:[0m
+[2m    $BPL_SPRING_CLOUD_BINDINGS_DISABLED  false  whether to auto-configure Spring Boot environment properties from bindings[0m
+[2m    $BPL_SPRING_CLOUD_BINDINGS_ENABLED   true   Deprecated - whether to auto-configure Spring Boot environment properties from bindings[0m
+  Creating slices from layers index
+[2m    dependencies (18.9 MB)[0m
+[2m    spring-boot-loader (281.8 KB)[0m
+[2m    snapshot-dependencies (0.0 B)[0m
+[2m    application (40.1 KB)[0m
+  [34mLaunch Helper[0m: [33mContributing[0m to layer
+[2m    Creating /layers/paketo-buildpacks_spring-boot/helper/exec.d/spring-cloud-bindings[0m
+  [34mSpring Cloud Bindings 1.10.0[0m: [33mContributing[0m to layer
+[2m    [32mReusing[0m[2m cached download from buildpack[0m
+[2m    Copying to /layers/paketo-buildpacks_spring-boot/spring-cloud-bindings[0m
+  [34mWeb Application Type[0m: [33mContributing[0m to layer
+[2m    Servlet web application detected[0m
+[2m    Writing env.launch/BPL_JVM_THREAD_COUNT.default[0m
+  4 application slices
+  Image labels:
+    org.opencontainers.image.title
+    org.opencontainers.image.version
+    org.springframework.boot.version
+[34m[0m
+[34m[1mPaketo Buildpack for Image Labels[0m[34m 4.3.0[0m
+  [34;2;3mhttps://github.com/paketo-buildpacks/image-labels[0m
+  [2mBuild Configuration:[0m
+[2m    $BP_IMAGE_LABELS                                                      arbitrary image labels[0m
+[2m    $BP_OCI_AUTHORS                                                       the org.opencontainers.image.authors image label[0m
+[2m    $BP_OCI_CREATED                                                       the org.opencontainers.image.created image label[0m
+[2m    $BP_OCI_DESCRIPTION                                                   the org.opencontainers.image.description image label[0m
+[2m    $BP_OCI_DOCUMENTATION                                                 the org.opencontainers.image.documentation image label[0m
+[2m    $BP_OCI_LICENSES                                                      the org.opencontainers.image.licenses image label[0m
+[2m    $BP_OCI_REF_NAME                                                      the org.opencontainers.image.ref.name image label[0m
+[2m    $BP_OCI_REVISION                                                      the org.opencontainers.image.revision image label[0m
+[2m    $BP_OCI_SOURCE         main/46d648eb9ea5306a04563287658d3a0aadf583d4  the org.opencontainers.image.revision image label[0m
+[2m    $BP_OCI_TITLE                                                         the org.opencontainers.image.title image label[0m
+[2m    $BP_OCI_URL                                                           the org.opencontainers.image.url image label[0m
+[2m    $BP_OCI_VENDOR                                                        the org.opencontainers.image.vendor image label[0m
+[2m    $BP_OCI_VERSION                                                       the org.opencontainers.image.version image label[0m
+  Image labels:
+    org.opencontainers.image.source
+[0;36m===> EXPORT
+[0mAdding layer 'paketo-buildpacks/ca-certificates:helper'
+Adding layer 'paketo-buildpacks/bellsoft-liberica:helper'
+Adding layer 'paketo-buildpacks/bellsoft-liberica:java-security-properties'
+Adding layer 'paketo-buildpacks/bellsoft-liberica:jre'
+Adding layer 'paketo-buildpacks/executable-jar:classpath'
+Adding layer 'paketo-buildpacks/spring-boot:helper'
+Adding layer 'paketo-buildpacks/spring-boot:spring-cloud-bindings'
+Adding layer 'paketo-buildpacks/spring-boot:web-application-type'
+Adding layer 'launch.sbom'
+Adding 5/5 app layer(s)
+Adding layer 'launcher'
+Adding layer 'config'
+Adding layer 'process-types'
+Adding label 'io.buildpacks.lifecycle.metadata'
+Adding label 'io.buildpacks.build.metadata'
+Adding label 'io.buildpacks.project.metadata'
+Adding label 'org.opencontainers.image.title'
+Adding label 'org.opencontainers.image.version'
+Adding label 'org.springframework.boot.version'
+Adding label 'org.opencontainers.image.source'
+Setting default process type 'web'
+Saving registry.cloud-garage.net/ages/tanzu-java-web-app-apps...
+*** Images (sha256:191ff329c6233de7075cea0d4b552c9e59363c8b02ee4e67b2112488f75b954a):
+      registry.cloud-garage.net/ages/tanzu-java-web-app-apps
+      registry.cloud-garage.net/ages/tanzu-java-web-app-apps:b1.20221115.112623
+Adding cache layer 'paketo-buildpacks/bellsoft-liberica:jdk'
+Adding cache layer 'paketo-buildpacks/syft:syft'
+Adding cache layer 'paketo-buildpacks/maven:application'
+Adding cache layer 'paketo-buildpacks/maven:cache'
+Adding cache layer 'cache.sbom'
+[0;36m===> COMPLETION
+[0mBuild successful
